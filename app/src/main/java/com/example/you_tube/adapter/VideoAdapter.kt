@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.you_tube.R
-import com.example.you_tube.model.ShortVideo
 import com.example.you_tube.model.Video
 import com.google.android.material.imageview.ShapeableImageView
 
@@ -17,27 +16,17 @@ class VideoAdapter(var context: Context, var item: ArrayList<Video>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
-    var type_shortvideo = 0
-    var type_video = 1
 
     override fun getItemCount(): Int {
         return item.size
     }
 
-    override fun getItemViewType(position: Int): Int {
 
-        return if (item[position].shortvideo.size>0) type_shortvideo else type_video
-    }
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        if (viewType == type_shortvideo) {
-            var view: View =
-                LayoutInflater.from(parent.context).inflate(R.layout.item_short, parent, false)
-            return ShortViewHolder(view)
-        }
 
 
         var view: View =
@@ -50,15 +39,8 @@ class VideoAdapter(var context: Context, var item: ArrayList<Video>) :
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         var video: Video = item[position]
 
-        if (holder is ShortViewHolder) {
-            var rv_short: RecyclerView = holder.rv_short
-            rv_short.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
-            var short: ArrayList<ShortVideo> = video.shortvideo as ArrayList<ShortVideo>
-            refreshAdapter(rv_short, short)
 
-        }
 
         if (holder is VideoViewHolder) {
 
@@ -74,18 +56,6 @@ class VideoAdapter(var context: Context, var item: ArrayList<Video>) :
         }
     }
 
-    fun refreshAdapter(rv_short: RecyclerView, short: List<ShortVideo>) {
-        var adapter = ShortVideoAdapter(context, short as ArrayList<ShortVideo>)
-        rv_short.adapter = adapter
-    }
-
-    class ShortViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var rv_short: RecyclerView
-
-        init {
-            rv_short = view.findViewById(R.id.rv_shorts)
-        }
-    }
 
     class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var iv_video: ImageView

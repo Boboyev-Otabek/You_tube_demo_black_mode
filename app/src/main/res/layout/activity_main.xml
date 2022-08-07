@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/white"
         android:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -33,7 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="YouTube"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="19sp"
                     android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:src="@mipmap/ic_notifications" />
+                        android:src="@mipmap/ic_notification" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <FrameLayout
-            android:background="@color/black"
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -105,7 +105,7 @@
                 android:layout_marginBottom="55dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/black">
+                android:background="@color/white">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_feed"
@@ -116,7 +116,7 @@
 
 
             <LinearLayout
-                android:background="@color/black"
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_gravity="bottom">
@@ -137,7 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Home"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -157,7 +157,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Shorts"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -208,7 +208,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Subscriptions"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -228,7 +228,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Library"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="14sp" />
                 </LinearLayout>
 
